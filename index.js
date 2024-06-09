@@ -28,6 +28,18 @@ app.get('/tasks', (req, res) => {
     });
 });
 
+app.get('/tasks/:id', (req, res) => {
+    const id = req.params.id;
+    const singleTaskQuery = `SELECT * FROM tasks WHERE id = ${id}`;
+
+    connection.query(singleTaskQuery, (err, results) => {
+        res.json(results[0]);
+    });
+});
+
+
+
+
 app.listen(port)
 
 
