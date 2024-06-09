@@ -37,6 +37,16 @@ app.get('/tasks/:id', (req, res) => {
     });
 });
 
+app.delete('/tasks/:id', (req, res) => {
+    const id = req.params.id; // Access ID from request parameter
+  
+    const sql = `DELETE FROM tasks WHERE id = ${id}`;
+  
+    connection.query(sql, (err, result) => {
+      res.sendStatus(204); // Send a successful response with no content
+    });
+  });
+
 
 
 
