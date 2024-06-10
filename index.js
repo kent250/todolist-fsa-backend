@@ -1,5 +1,6 @@
 const express = require('express'); //import express package
 const mysql = require('mysql'); //import mysql package
+const bodyParser = require('body-parser');
 
 const app = express(); // create express instance
 const port = 3000; //port where API will listen to
@@ -19,6 +20,7 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(bodyParser.json());
 
 app.get('/tasks', (req, res) => {
     const allTasksQuery = 'SELECT * FROM tasks';
@@ -48,17 +50,31 @@ app.delete('/tasks/:id', (req, res) => {
   });
 
 
-//   app.put('/tasks/:id', (req, res) => {
-//     const id = req.params.id; // Access ID from request parameter
-//     const { task_name } = req.body; // Assuming these fields are being updated
+  app.put('/tasks/:taskId/completed', (req, res) => {
+    const { taskId } = req.params;
   
-//     const sql = `UPDATE tasks SET task_name = ? WHERE id = ?`;
-//     const values = [task_name, id];
+    const taskCompletedQuery = `UPDATE tasks SET completed = ? WHERE id = ?`;
+    const values = [true, parseInt(taskId)]; // Set completed to true
   
-//     connection.query(sql, values, (err, result) => {
-//       res.sendStatus(200); // Send a successful response
-//     });
-//   });
+    connection.query(taskCompletedQuery, values, (err, result) => {
+        res.sendStatus(204); // Send a successful response with no content
+      
+    });
+  });
+
+  app.post('/tasks', (req, res) => {
+    const { task_name, due_date } = req.body;
+
+    const newTaskQuery = `INSERT INTO tasks(task_name, due_date) VALUES (?, ?)`;
+    const values = [task_name, due_date];
+
+    connection.query(newTaskQuery, values, (error, result)=>{
+        res.sendStatus(204);
+    });
+  });
+
+
+
 
 app.listen(port)
 
