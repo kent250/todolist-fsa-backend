@@ -48,7 +48,17 @@ app.delete('/tasks/:id', (req, res) => {
   });
 
 
-
+//   app.put('/tasks/:id', (req, res) => {
+//     const id = req.params.id; // Access ID from request parameter
+//     const { task_name } = req.body; // Assuming these fields are being updated
+  
+//     const sql = `UPDATE tasks SET task_name = ? WHERE id = ?`;
+//     const values = [task_name, id];
+  
+//     connection.query(sql, values, (err, result) => {
+//       res.sendStatus(200); // Send a successful response
+//     });
+//   });
 
 app.listen(port)
 
