@@ -22,6 +22,7 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 
+//select all tasks
 app.get('/tasks', (req, res) => {
     const allTasksQuery = 'SELECT * FROM tasks';
 
@@ -30,6 +31,7 @@ app.get('/tasks', (req, res) => {
     });
 });
 
+  //Select Single task
 app.get('/tasks/:id', (req, res) => {
     const id = req.params.id;
     const singleTaskQuery = `SELECT * FROM tasks WHERE id = ${id}`;
@@ -38,18 +40,18 @@ app.get('/tasks/:id', (req, res) => {
         res.json(results[0]);
     });
 });
-
-app.delete('/tasks/:id', (req, res) => {
-    const id = req.params.id; // Access ID from request parameter
-  
-    const sql = `DELETE FROM tasks WHERE id = ${id}`;
-  
-    connection.query(sql, (err, result) => {
-      res.sendStatus(204); // Send a successful response with no content
+  //Delete task
+    app.delete('/tasks/:id', (req, res) => {
+        const id = req.params.id; // Access ID from request parameter
+    
+        const sql = `DELETE FROM tasks WHERE id = ${id}`;
+    
+        connection.query(sql, (err, result) => {
+        res.sendStatus(204); // Send a successful response with no content
+        });
     });
-  });
 
-
+  //mark task completed
   app.put('/tasks/:taskId/completed', (req, res) => {
     const { taskId } = req.params;
   
@@ -62,6 +64,19 @@ app.delete('/tasks/:id', (req, res) => {
     });
   });
 
+  //mark task uncomplete
+  app.put('/tasks/:taskId/uncompleted', (req, res) =>{
+    const taskId = req.params.taskId;
+
+    const taskUncompletedQuery = `UPDATE tasks  SET completed = ? WHERE id = ? `;
+    const values = [false, parseInt(taskId)];
+
+    connection.query(taskUncompletedQuery, values, (err, result)=> {
+        res.sendStatus(200);
+    });
+  });
+
+  //Select all tasks
   app.post('/tasks', (req, res) => {
     const { task_name, due_date } = req.body;
 
