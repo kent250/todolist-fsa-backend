@@ -22,6 +22,20 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 
+
+  //Create new Task
+  app.post('/tasks', (req, res) => {
+    const { task_name, due_date } = req.body;
+
+    const newTaskQuery = `INSERT INTO tasks(task_name, due_date) VALUES (?, ?)`;
+    const values = [task_name, due_date];
+
+    connection.query(newTaskQuery, values, (error, result)=>{
+        res.sendStatus(204);
+    });
+  });
+
+
 //select all tasks
 app.get('/tasks', (req, res) => {
     const allTasksQuery = 'SELECT * FROM tasks';
@@ -76,15 +90,17 @@ app.get('/tasks/:id', (req, res) => {
     });
   });
 
-  //Create new Task
-  app.post('/tasks', (req, res) => {
+
+  // Update Task Details
+  app.put('/tasks/:id', (req, res)=> {
     const { task_name, due_date } = req.body;
+    const taskId = req.params.id;
 
-    const newTaskQuery = `INSERT INTO tasks(task_name, due_date) VALUES (?, ?)`;
-    const values = [task_name, due_date];
+    const updateTaskQuery = `UPDATE tasks SET task_name = ?, due_date = ? WHERE id = ? `;
+    const values = [task_name, due_date, taskId];
 
-    connection.query(newTaskQuery, values, (error, result)=>{
-        res.sendStatus(204);
+    connection.query(updateTaskQuery, values, (error, result)=>{
+      res.sendStatus(200);
     });
   });
 
