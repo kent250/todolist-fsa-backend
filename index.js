@@ -76,7 +76,7 @@ app.get('/tasks/:id', (req, res) => {
     });
   });
 
-  //Select all tasks
+  //Create new Task
   app.post('/tasks', (req, res) => {
     const { task_name, due_date } = req.body;
 
