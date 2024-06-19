@@ -51,13 +51,21 @@ To get started with Todo List backend, follow these steps:
 
  ### Create New Task
 
-Method: POST
-Route: /tasks
-Request Body:
+**Method:** POST
+**Route:** `/tasks`
 
-    task_name: String (required) - The name of the task.
-    due_date: Date (Required) - The due date for the task.
-    Response: Status code 200 OK upon successful creation of Task.
+**Request Body:**
+
+| Property        | Type     | Required | Description                                      |
+|------------------|----------|-----------|--------------------------------------------------|
+| `task_name`       | String   | Yes      | The name of the task.                          |
+| `due_date`        | Date     | Yes      | The due date for the task (optional).           |
+
+**Response:**
+
+* Status code 200 (OK) upon successful creation of a task.
+
+---
 
 ## Get All Tasks
 
