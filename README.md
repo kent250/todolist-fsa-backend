@@ -59,7 +59,7 @@ To get started with Todo List backend, follow these steps:
 | Property        | Type     | Required | Description                                      |
 |------------------|----------|-----------|--------------------------------------------------|
 | `task_name`       | String   | Yes      | The name of the task.                          |
-| `due_date`        | Date     | Yes      | The due date for the task (optional).           |
+| `due_date`        | Date     | Yes      | The due date for the task.           |
 
 **Response:**
 
@@ -73,13 +73,22 @@ Method: GET
 Route: /tasks
 Response: An array of JSON objects representing all tasks in the database. Each object contains properties id, task_name, due_date, and completed which is boolean value 1 for completed and 0 for not completed.
 
+
 ## Get Single Task
 
-Method: GET
-Route: /tasks/:id
-Path Parameter:
-    id: Integer (required) - The ID of the task to retrieve.
-Response: A JSON object representing the single task with the specified ID.
+
+**Method:** GET
+**Route:** `/tasks/:id`
+
+**Path Parameter:**
+
+| Parameter | Type     | Required | Description                                  |
+|-----------|----------|-----------|----------------------------------------------|
+| `id`       | Integer  | Yes      | The ID of the task to retrieve.             |
+
+**Response:**
+
+* A JSON object representing the single task with the specified ID.
 
 ## Delete Task
 
