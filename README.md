@@ -8,7 +8,8 @@
 
 ## Project Description
 
-This Node.js API provides a robust foundation for building a feature-rich to-do list application. It offers a comprehensive set of functionalities to manage tasks, making it ideal for integration into a frontend application.
+This is a Backend APIs that provides Basic functionalities of a ToDo list application that can be integrated 
+with front-end applications. It is built using Node.js, Express.js, MYSQl database
 
 ## Features
 
@@ -167,8 +168,8 @@ This section details all available API endpoints for managing tasks in this to-d
 
 | Property        | Type     | Required | Description                                      |
 |------------------|----------|-----------|--------------------------------------------------|
-| `task_name`       | String   | No       | The new name of the task (optional).           |
-| `due_date`        | Date     | No       | The new due date for the task (optional).       |
+| `task_name`       | String   | No       | The new name of the task.           |
+| `due_date`        | Date     | No       | The new due date for the task.       |
 
 **Response:**
 
