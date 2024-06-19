@@ -28,9 +28,9 @@ Documentation for all API endpoints with request/response details
 
 Prerequisites
 
-Node.js (version X.X.X or higher) - https://nodejs.org/en
-npm (Node Package Manager) - (usually bundled with Node.js)
-MySQL (version X.X.X or higher) - https://www.mysql.com/ (or alternative database management system)
+    - Node.js (version X.X.X or higher) - https://nodejs.org/en
+    - npm (Node Package Manager) - (usually bundled with Node.js)
+    - MySQL (version X.X.X or higher) - https://www.mysql.com/ (or alternative database management system)
 
 ## Installation
 
