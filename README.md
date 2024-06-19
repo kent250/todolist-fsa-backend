@@ -61,13 +61,13 @@ Request Body:
     due_date: Date (Required) - The due date for the task.
     Response: Status code 200 OK upon successful creation of Task.
 
-# Get All Tasks
+## Get All Tasks
 
 Method: GET
 Route: /tasks
 Response: An array of JSON objects representing all tasks in the database. Each object contains properties id, task_name, due_date, and completed which is boolean value 1 for completed and 0 for not completed.
 
-# Get Single Task
+## Get Single Task
 
 Method: GET
 Route: /tasks/:id
@@ -75,7 +75,7 @@ Path Parameter:
     id: Integer (required) - The ID of the task to retrieve.
 Response: A JSON object representing the single task with the specified ID.
 
-# Delete Task
+## Delete Task
 
 Method: DELETE
 Route: /tasks/:id
@@ -83,7 +83,7 @@ Path Parameter:
     id: Integer (required) - The ID of the task to delete.
 Response: Status code 204 (No Content) upon successful deletion.
 
-# Mark Task Completed
+## Mark Task Completed
 
 Method: PUT
 Route: /tasks/:taskId/completed
@@ -91,7 +91,7 @@ Path Parameter:
     taskId: Integer (required) - The ID of the task to mark completed.
 Response: Status code 204 (No Content) upon successful update.
 
-# Mark Task Uncompleted
+## Mark Task Uncompleted
 
 Method: PUT
 Route: /tasks/:taskId/uncompleted
@@ -99,7 +99,7 @@ Path Parameter:
     taskId: Integer (required) - The ID of the task to mark uncompleted.
 Response: Status code 204 (No Content) upon successful update.
 
-# Update Task Details
+## Update Task Details
 
 Method: PUT
 Route: /tasks/:id
