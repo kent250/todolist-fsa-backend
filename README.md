@@ -12,10 +12,10 @@ This Node.js API provides a robust foundation for building a feature-rich to-do 
 
 ## Features
 
-Task Creation: Add new tasks to your to-do list, specifying their name and due dates.
-Task Retrieval: Retrieve all tasks as well as their statuses(completed, Not Completed, Over due)
-Task Management: Update task details name and due date, or mark tasks as completed/uncompleted.
-Task Deletion: Remove unwanted tasks from your to-do list.
+- Task Creation: Add new tasks to your to-do list, specifying their name and due dates.
+- Task Retrieval: Retrieve all tasks as well as their statuses(completed, Not Completed, Over due)
+- Task Management: Update task details name and due date, or mark tasks as completed/uncompleted.
+- Task Deletion: Remove unwanted tasks from your to-do list.
 
 
 ##  Prerequisites (Node.js, npm, MySQL)
