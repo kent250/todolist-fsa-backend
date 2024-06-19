@@ -69,13 +69,16 @@ To get started with Todo List backend, follow these steps:
 
 ## Get All Tasks
 
-Method: GET
-Route: /tasks
-Response: An array of JSON objects representing all tasks in the database. Each object contains properties id, task_name, due_date, and completed which is boolean value 1 for completed and 0 for not completed.
+**Method:** GET
+**Route:** `/tasks`
 
+**Response:**
+
+* Status code 200 (OK) with a JSON array containing all tasks in the database. Each object represents a task with properties like `id`, `task_name`, `due_date`, and `completed`.
+
+---
 
 ## Get Single Task
-
 
 **Method:** GET
 **Route:** `/tasks/:id`
@@ -88,45 +91,80 @@ Response: An array of JSON objects representing all tasks in the database. Each 
 
 **Response:**
 
-* A JSON object representing the single task with the specified ID.
+* Status code 200 (OK) with a JSON object representing the single task with the specified ID.
+
+---
 
 ## Delete Task
 
-Method: DELETE
-Route: /tasks/:id
-Path Parameter:
-    id: Integer (required) - The ID of the task to delete.
-Response: Status code 204 (No Content) upon successful deletion.
+**Method:** DELETE
+**Route:** `/tasks/:id`
 
+**Path Parameter:**
+
+| Parameter | Type     | Required | Description                                  |
+|-----------|----------|-----------|----------------------------------------------|
+| `id`       | Integer  | Yes      | The ID of the task to delete.                 |
+
+**Response:**
+
+* Status code 204 (No Content) upon successful deletion.
+
+---
 ## Mark Task Completed
 
-Method: PUT
-Route: /tasks/:taskId/completed
-Path Parameter:
-    taskId: Integer (required) - The ID of the task to mark completed.
-Response: Status code 204 (No Content) upon successful update.
+**Method:** PUT
+**Route:** `/tasks/:taskId/completed`
+
+**Path Parameter:**
+
+| Parameter | Type     | Required | Description                                  |
+|-----------|----------|-----------|----------------------------------------------|
+| `taskId`   | Integer  | Yes      | The ID of the task to mark completed.         |
+
+**Response:**
+
+* Status code 204 (No content) upon successful update.
+
+---
 
 ## Mark Task Uncompleted
 
-Method: PUT
-Route: /tasks/:taskId/uncompleted
-Path Parameter:
-    taskId: Integer (required) - The ID of the task to mark uncompleted.
-Response: Status code 204 (No Content) upon successful update.
+**Method:** PUT
+**Route:** `/tasks/:taskId/uncompleted`
 
+**Path Parameter:**
+
+| Parameter | Type     | Required | Description                                  |
+|-----------|----------|-----------|----------------------------------------------|
+| `taskId`   | Integer  | Yes      | The ID of the task to mark uncompleted.        |
+
+**Response:**
+
+* Status code 204 (No content) upon successful update.
+
+---
 ## Update Task Details
 
-Method: PUT
-Route: /tasks/:id
-Path Parameter:
-    id: Integer (required) - The ID of the task to update.
-Request Body:
-    task_name: String (optional) - The new name of the task.
-    due_date: date(optinal) - The new Due Date of the task.
+**Method:** PUT
+**Route:** `/tasks/:id`
 
+**Path Parameter:**
 
+| Parameter | Type     | Required | Description                                  |
+|-----------|----------|-----------|----------------------------------------------|
+| `id`       | Integer  | Yes      | The ID of the task to update.                 |
 
+**Request Body:**
 
+| Property        | Type     | Required | Description                                      |
+|------------------|----------|-----------|--------------------------------------------------|
+| `task_name`       | String   | No       | The new name of the task (optional).           |
+| `due_date`        | Date     | No       | The new due date for the task (optional).       |
+
+**Response:**
+
+* Status code 200 (OK) upon successful update.
 
 
 
