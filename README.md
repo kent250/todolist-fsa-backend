@@ -6,8 +6,6 @@
 - [Installation ](#installation)
 - [API Endpoints ](#api-endpoints)
 
-
-
 ## Project Description
 
 This Node.js API provides a robust foundation for building a feature-rich to-do list application. It offers a comprehensive set of functionalities to manage tasks, making it ideal for integration into a frontend application.
@@ -28,9 +26,9 @@ Documentation for all API endpoints with request/response details
 
 Prerequisites
 
-    - Node.js (version X.X.X or higher) - https://nodejs.org/en
+    - Node.js (version 20.14.0 or higher) - https://nodejs.org/en
     - npm (Node Package Manager) - (usually bundled with Node.js)
-    - MySQL (version X.X.X or higher) - https://www.mysql.com/ (or alternative database management system)
+    - MySQL (version 8.0.30 or higher) - https://www.mysql.com/ (or alternative database management system)
 
 ## Installation
 
