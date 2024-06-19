@@ -31,7 +31,7 @@ app.use(bodyParser.json());
     const values = [task_name, due_date];
 
     connection.query(newTaskQuery, values, (error, result)=>{
-        res.sendStatus(204);
+        res.sendStatus(200);
     });
   });
 
@@ -86,7 +86,7 @@ app.get('/tasks/:id', (req, res) => {
     const values = [false, parseInt(taskId)];
 
     connection.query(taskUncompletedQuery, values, (err, result)=> {
-        res.sendStatus(200);
+        res.sendStatus(204);
     });
   });
 
