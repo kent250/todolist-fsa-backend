@@ -53,8 +53,7 @@ This section details all available API endpoints for managing tasks in this to-d
 
 **General Notes:**
 
-* All routes are relative to the API base URL.
-* Adjust the base URL according to your development or deployment environment.
+* The API is currently deployed at https://todolist-fsa-backend.onrender.com
 * Responses include status codes to indicate success or failure.
 
 
