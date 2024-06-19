@@ -49,6 +49,15 @@ To get started with Todo List backend, follow these steps:
 
 ## API Endpoints
 
+This section details all available API endpoints for managing tasks in this to-do list application.
+
+**General Notes:**
+
+* All routes are relative to the API base URL.
+* Adjust the base URL according to your development or deployment environment.
+* Responses include status codes to indicate success or failure.
+
+
  ### Create New Task
 
 **Method:** POST
