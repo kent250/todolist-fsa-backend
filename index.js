@@ -7,10 +7,10 @@ const port = 3000; //port where API will listen to
 
 //create connection object
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'todolist_fsa'
+    host: 'bn9xf3pykr8ruumy0rh2-mysql.services.clever-cloud.com',
+    user: 'uymqbeofwpld5srp',
+    password: 'ZycCBFj6o8eOnMzzE2mH',
+    database: 'bn9xf3pykr8ruumy0rh2'
 });
 
 app.use((req, res, next) => {
