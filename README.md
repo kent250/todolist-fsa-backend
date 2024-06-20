@@ -29,7 +29,7 @@ Prerequisites
 
     - Node.js (version 20.14.0 or higher) - https://nodejs.org/en
     - npm (Node Package Manager) - (usually bundled with Node.js)
-    - MySQL (version 8.0.30 or higher) - https://www.mysql.com/ (or alternative database management system)
+    - XAMPP (version 8.2.X or higher): Download and install from https://www.apachefriends.org/
 
 ## Installation
 
@@ -48,6 +48,26 @@ To get started with Todo List backend, follow these steps:
     npm install
     ```
 
+
+3. Install And Run XAMPP Server For Database
+
+- Run XAMPP Installer: Locate the downloaded XAMPP installer and run it.
+- Choose Installation Options: During installation, ensure you select "Apache", "MySQL" and "PHP" components. You can deselect other components if not needed.
+- Start Apache and MySQL Services: Open the XAMPP Control Panel and click the "Start" button next to both "Apache" and "MySQL" modules.
+
+4. Database Import:
+
+- Create a Database: Open your web browser and navigate to http://localhost/phpmyadmin.
+- Create New Database: Click on "New" in the top navigation bar. Enter a **todolist_fsa**  as database name Create.
+- Import Database File: with todolist_fsa database Selected click on the "Import" tab in phpMyAdmin. Select the database file called **todolist_fsa.sql** file from your project root and click "Go" to import it.
+
+5. Running the API
+
+- Start the Server: Open a terminal window in the project directory and run the following command:
+    ```bash
+    node index.js
+    ```
+
 ## API Endpoints
 
 This section details all available API endpoints for managing tasks in this to-do list application.
@@ -55,7 +75,7 @@ This section details all available API endpoints for managing tasks in this to-d
 **General Notes:**
 
 * The API is currently deployed at https://todolist-fsa-backend.onrender.com
-* Responses include status codes to indicate success or failure.
+* Responses include status codes to indicate success.
 
 
  ### Create New Task
