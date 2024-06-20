@@ -31,7 +31,7 @@ app.use(bodyParser.json());
     const values = [task_name, due_date];
 
     connection.query(newTaskQuery, values, (error, result)=>{
-        res.sendStatus(200);
+        res.sendStatus(204);
     });
   });
 
@@ -42,7 +42,8 @@ app.get('/tasks', (req, res) => {
 
     connection.query(allTasksQuery, (err, results) => {
         res.json(results);
-        res.sendStatus(200); 
+        
+    });
 });
 
   //Select Single task
@@ -52,8 +53,6 @@ app.get('/tasks/:id', (req, res) => {
 
     connection.query(singleTaskQuery, (err, results) => {
         res.json(results[0]);
-        res.sendStatus(200); 
-
     });
 });
   //Delete task
@@ -63,7 +62,7 @@ app.get('/tasks/:id', (req, res) => {
         const sql = `DELETE FROM tasks WHERE id = ${id}`;
     
         connection.query(sql, (err, result) => {
-        res.sendStatus(204);
+        res.sendStatus(204); // Send a successful response with no content
         });
     });
 
@@ -75,7 +74,7 @@ app.get('/tasks/:id', (req, res) => {
     const values = [true, parseInt(taskId)]; // Set completed to true
   
     connection.query(taskCompletedQuery, values, (err, result) => {
-        res.sendStatus(204); 
+        res.sendStatus(204); // Send a successful response with no content
       
     });
   });
@@ -88,7 +87,7 @@ app.get('/tasks/:id', (req, res) => {
     const values = [false, parseInt(taskId)];
 
     connection.query(taskUncompletedQuery, values, (err, result)=> {
-        res.sendStatus(204);
+        res.sendStatus(200);
     });
   });
 
