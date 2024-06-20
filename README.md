@@ -5,6 +5,7 @@
 - [Prerequisites](#prerequisites)
 - [Installation ](#installation)
 - [API Endpoints ](#api-endpoints)
+- [CORS Settings ](#cors-settings)
 
 ## Project Description
 
@@ -195,8 +196,18 @@ This section details all available API endpoints for managing tasks in this to-d
 
 * Status code 200 (OK) upon successful update.
 
+## CORS Settings
+In index.js remember to change this block of code to match the frontend that will be consuming the API
 
+```
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173'); // Allow requests from your Vue app origin
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Allowed HTTP methods
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Allowed headers
+    next();
+});
 
+```
 
 
 
